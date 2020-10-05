@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>投稿一覧</title>
+    </head>
+    <body>
+        <h2>投稿一覧</h2>
+        {% for post in post_list %}
+            <p>{{ post.title }}</p>
+            <p>{{ post.subtitle }}</p>
+            <img src={{post.tec_img.url}} max-width=200 height="150">
+            <p>{{ post.desc }}</p>
+        {% endfor %}
+        <a href="post_create"><button type="submit">追加</button></a>
+    </body>
+</html>

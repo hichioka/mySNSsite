@@ -5,13 +5,21 @@
         <title>投稿一覧</title>
     </head>
     <body>
-        <h2>投稿一覧</h2>
+        <h2>カード一覧</h2>
         {% for post in post_list %}
             <p>{{ post.title }}</p>
             <p>{{ post.subtitle }}</p>
             <img src={{post.tec_img.url}} max-width=200 height="150">
-            <p>{{ post.desc }}</p>
+            <p>{{ post.desc1 }}</p>
+            <p>{{ post.desc2 }}</p>
+            <p>{{ post.desc3 }}</p>
+            {% csrf_token %}
+            <a href="post_edit"><button type="submit">編集</button></a>
+            <a href="post_remove"><button type="submit">削除</button></a>
         {% endfor %}
-        <a href="post_create"><button type="submit">追加</button></a>
+        <div>
+          {% csrf_token %}
+          <a href="post_create"><button type="submit">追加</button></a>
+        </div>
     </body>
 </html>
